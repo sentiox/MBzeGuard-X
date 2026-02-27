@@ -91,13 +91,13 @@ set(CLASH_DIR "../libclash/windows")
 # endif()
 
 # Install core binaries only if they exist
-if(EXISTS "${CLASH_DIR}/FlClashCore.exe")
-  install(PROGRAMS "${CLASH_DIR}/FlClashCore.exe" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
+if(EXISTS "${CLASH_DIR}/MBzeGuardCore.exe")
+  install(PROGRAMS "${CLASH_DIR}/MBzeGuardCore.exe" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
     COMPONENT Runtime)
 endif()
 
-if(EXISTS "${CLASH_DIR}/FlClashHelperService.exe")
-  install(PROGRAMS "${CLASH_DIR}/FlClashHelperService.exe" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
+if(EXISTS "${CLASH_DIR}/MBzeGuardHelperService.exe")
+  install(PROGRAMS "${CLASH_DIR}/MBzeGuardHelperService.exe" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
     COMPONENT Runtime)
 endif()
 

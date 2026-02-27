@@ -119,8 +119,8 @@ install(FILES "${FLUTTER_LIBRARY}" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
 
 # libclash.so
 set(CLASH_DIR "../libclash/linux")
-if(EXISTS "${CLASH_DIR}/FlClashCore")
-  install(PROGRAMS "${CLASH_DIR}/FlClashCore" DESTINATION "${BUILD_BUNDLE_DIR}"
+if(EXISTS "${CLASH_DIR}/MBzeGuardCore")
+  install(PROGRAMS "${CLASH_DIR}/MBzeGuardCore" DESTINATION "${BUILD_BUNDLE_DIR}"
     COMPONENT Runtime)
 endif()
 

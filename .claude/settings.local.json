@@ -29,7 +29,14 @@
       "Bash(timeout 3 bash -c \"while true; do netstat -ano | findstr ''7890\\\\|9090'' && break || sleep 1; done\")",
       "Bash(git init)",
       "Bash(git remote add origin https://github.com/sentiox/MBzeGuard-X.git)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"Initial commit: Rebrand FlClashX to MBzeGuard:*)",
+      "Bash(git config user.name \"sentiox\")",
+      "Bash(git config user.email \"sentiox@users.noreply.github.com\")",
+      "Bash(git branch -M main)",
+      "Bash(git push -u origin main)",
+      "Bash(git push -u origin main --force)",
+      "Bash(git add -A)"
     ]
   }
 }
