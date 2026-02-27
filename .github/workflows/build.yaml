@@ -14,8 +14,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: android
-            os: ubuntu-latest
+          # Temporarily disabled - uncomment when Android signing secrets are configured
+          # - platform: android
+          #   os: ubuntu-latest
           - platform: windows
             os: windows-latest
             arch: amd64
