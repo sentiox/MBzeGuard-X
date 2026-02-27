@@ -87,6 +87,12 @@ jobs:
           pattern: artifact-*
           merge-multiple: true
 
+      - name: List downloaded artifacts
+        run: |
+          echo "Contents of dist directory:"
+          ls -la ./dist/ || echo "dist directory not found"
+          find ./dist -type f || echo "No files found"
+
       - name: Generate release.md
         run: |
           tags=($(git tag --merged $(git rev-parse HEAD) --sort=-creatordate))
@@ -148,10 +154,14 @@ jobs:
       - name: Generate sha256
         if: env.IS_STABLE == 'true'
         run: |
-          cd ./dist
-          for file in $(find . -type f -not -name "*.sha256"); do
-            sha256sum "$file" > "${file}.sha256"
-          done
+          if [ -d "./dist" ] && [ "$(ls -A ./dist 2>/dev/null)" ]; then
+            cd ./dist
+            for file in $(find . -type f -not -name "*.sha256"); do
+              sha256sum "$file" > "${file}.sha256"
+            done
+          else
+            echo "No files in dist directory, skipping sha256 generation"
+          fi
 
       - name: Release (Stable)
         if: ${{ env.IS_STABLE == 'true' }}
