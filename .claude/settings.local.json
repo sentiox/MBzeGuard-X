@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(flutter --version)",
+      "Bash(find . -name \"*.kt\" -type f -exec sed -i 's/package com\\\\.follow\\\\.clashx/package com.mbzeguard.app/g' {} ;)",
+      "Bash(find . -name \"*.kt\" -type f -exec sed -i 's/import com\\\\.follow\\\\.clashx/import com.mbzeguard.app/g' {} ;)",
+      "Bash(find . -name \"*.kt\" -type f -exec sed -i 's/FlClashXApplication/MBzeGuardApplication/g' {} ;)",
+      "Bash(find . -name \"*.kt\" -type f -exec sed -i 's/FlClash\\\\\\(Service\\\\|TileService\\\\|VpnService\\\\\\)/MBzeGuard\\\\1/g' {} ;)",
+      "Bash(find lib -name \"*.dart\" -type f -exec grep -l \"flclashx\\\\|FlClashX\" {} ;)",
+      "Bash(find . -name \"*.dart\" -type f -exec sed -i 's/package:flclashx/package:mbzeguard/g' {} ;)",
+      "Bash(find . -name \"*.dart\" -type f -exec sed -i 's/from flclashx/from mbzeguard/g' {} ;)",
+      "Bash(flutter clean)",
+      "Bash(flutter pub get)",
+      "Bash(flutter analyze --no-fatal-infos)",
+      "Bash(flutter run -d windows)",
+      "Bash(flutter build windows --debug)",
+      "Bash(go version)",
+      "Bash(go mod download)",
+      "Bash(go build -tags \"!cgo\" -trimpath -ldflags=\"-s -w -buildid=\" -o ../libclash/windows/FlClashCore.exe .)",
+      "Bash(git submodule init)",
+      "Bash(git submodule update --init --recursive)",
+      "Bash(git clone -b FlClashX https://github.com/pluralplay/xHomo.git Clash.Meta)",
+      "Bash(./FlClashCore.exe --version)",
+      "Bash(tasklist)",
+      "Bash(findstr MBzeGuard)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \"7890\\\\|9090\")",
+      "Bash(timeout 3 bash -c \"while true; do netstat -ano | findstr ''7890\\\\|9090'' && break || sleep 1; done\")",
+      "Bash(git init)",
+      "Bash(git remote add origin https://github.com/sentiox/MBzeGuard-X.git)",
+      "Bash(git add .)"
+    ]
+  }
+}
