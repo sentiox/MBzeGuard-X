@@ -613,7 +613,7 @@ class BuildCommand extends Command {
           target: target,
           targets: "exe,zip",
           args:
-              " --description $archName --build-dart-define=CORE_SHA256=$token --build-dart-define=CORE_VERSION=$coreVersion",
+              " --build-dart-define=CORE_SHA256=$token --build-dart-define=CORE_VERSION=$coreVersion",
           env: env,
         );
         return;
@@ -633,7 +633,7 @@ class BuildCommand extends Command {
           target: target,
           targets: targets,
           args:
-              " --description $archName --build-target-platform $defaultTarget --build-dart-define=CORE_VERSION=$coreVersion",
+              " --build-target-platform $defaultTarget --build-dart-define=CORE_VERSION=$coreVersion",
           env: env,
         );
         return;
