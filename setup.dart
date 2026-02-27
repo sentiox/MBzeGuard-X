@@ -364,27 +364,10 @@ class Build {
   static List<String> getExecutable(String command) => command.split(" ");
 
   static getDistributor() async {
-    final distributorDir = join(
-      current,
-      "plugins",
-      "flutter_distributor",
-      "packages",
-      "flutter_distributor",
-    );
-
+    // Use official flutter_distributor from pub.dev
     await exec(
-      name: "clean distributor",
-      Build.getExecutable("flutter clean"),
-      workingDirectory: distributorDir,
-    );
-    await exec(
-      name: "upgrade distributor",
-      Build.getExecutable("flutter pub upgrade"),
-      workingDirectory: distributorDir,
-    );
-    await exec(
-      name: "get distributor",
-      Build.getExecutable("dart pub global activate -s path $distributorDir"),
+      name: "activate flutter_distributor",
+      Build.getExecutable("dart pub global activate flutter_distributor"),
     );
   }
 
