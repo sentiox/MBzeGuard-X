@@ -1,7 +1,7 @@
 name: mbzeguard
 description: MBzeGuard - Multi-platform proxy client based on ClashMeta, simple and easy to use, open-source and ad-free.
 publish_to: "none"
-version: 0.0.3+2026022801
+version: 0.0.4+2026022802
 
 environment:
   sdk: ">=3.5.0 <4.0.0"

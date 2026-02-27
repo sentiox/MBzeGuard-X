@@ -72,7 +72,7 @@ jobs:
   upload:
     permissions: write-all
     needs: [build]
-    if: always() && (needs.build.result == 'success')
+    if: always() && !cancelled()
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
